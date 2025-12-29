@@ -11,4 +11,8 @@
   .login-card {
     width: 100%;
   }
+
+  .row {
+    text-align: center;
+  }
 }
