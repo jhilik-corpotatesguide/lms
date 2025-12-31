@@ -1,5 +1,5 @@
 import PhoneCard from "./components/Phonecard";
-import LogoCard from "./components/Logocard";
+import LogoCard from "./components/Logocard"
 
 function Login() {
   return (
