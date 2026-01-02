@@ -1,26 +1,33 @@
+// React hooks
 import { useState } from "react";
+
+// Phone input component & validator
 import PhoneInput from "react-phone-number-input";
 import { isValidPhoneNumber } from "libphonenumber-js";
+
+// Phone input default styles
 import "react-phone-number-input/style.css";
 
 function PhoneCard() {
-  // Step control: 1 = phone, 2 = OTP
+
+  // Step control: 1 = phone input, 2 = OTP input
   const [step, setStep] = useState(1);
 
-  // Stores full phone number with country code (+91...)
+  // Stores complete phone number with country code (+91...)
   const [phone, setPhone] = useState("");
 
-  // OTP value
+  // Stores entered OTP
   const [otp, setOtp] = useState("");
 
-  // Error message
+  // Stores validation / error messages
   const [error, setError] = useState("");
 
-  // Loading state for OTP verify
+  // Loading state while verifying OTP
   const [loading, setLoading] = useState(false);
 
-  // Handle Get OTP button
+  // Handle "Get OTP" button click
   const handleGetOtp = () => {
+
     // Check if phone number is empty
     if (!phone) {
       setError("Please enter your phone number.");
@@ -33,7 +40,7 @@ function PhoneCard() {
       return;
     }
 
-    // Clear error and move to OTP step
+    // Clear error and move to OTP screen
     setError("");
     setStep(2);
 
@@ -43,7 +50,8 @@ function PhoneCard() {
 
   // Handle OTP verification
   const handleVerifyOtp = () => {
-    // Validate OTP (6 digits only)
+
+    // Validate OTP (must be exactly 6 digits)
     if (otp.length !== 6 || isNaN(otp)) {
       setError("Please enter a valid 6-digit OTP.");
       return;
@@ -59,7 +67,7 @@ function PhoneCard() {
     }, 2000);
   };
 
-  // Go back to phone number step
+  // Go back to phone number screen
   const handleBack = () => {
     setStep(1);
     setOtp("");
@@ -68,18 +76,22 @@ function PhoneCard() {
 
   return (
     <div className="card shadow p-4 login-card">
+
+      {/* Title */}
       <h5>Enter your Phone Number</h5>
+
+      {/* Subtitle */}
       <p className="text-muted small">
         We will send you an OTP to verify your details
       </p>
 
-      {/* Error message */}
+      {/* Error Message */}
       {error && <div className="alert alert-danger small">{error}</div>}
 
-      {/* STEP 1: Phone Number */}
+      {/* STEP 1: Phone Number Input */}
       {step === 1 && (
         <>
-          {/* Phone input with ALL country flags */}
+          {/* International phone input with country selector */}
           <PhoneInput
             international
             defaultCountry="IN"
@@ -88,15 +100,17 @@ function PhoneCard() {
             className="mb-3"
           />
 
-          <button className="btn btn-primary w-100" onClick={handleGetOtp}>
+          {/* Get OTP Button */}
+          <button className="btn btn-primary w-100 custom-btn" onClick={handleGetOtp}>
             Get OTP
           </button>
         </>
       )}
 
-      {/* STEP 2: OTP */}
+      {/* STEP 2: OTP Input */}
       {step === 2 && (
         <>
+          {/* OTP input field */}
           <input
             type="text"
             className="form-control mb-3"
@@ -106,14 +120,16 @@ function PhoneCard() {
             maxLength="6"
           />
 
+          {/* Verify OTP Button */}
           <button
-            className="btn btn-success w-100"
+            className="btn btn-primary w-100 custom-btn"
             onClick={handleVerifyOtp}
             disabled={loading}
           >
             {loading ? "Verifying..." : "Verify OTP"}
           </button>
 
+          {/* Change phone number */}
           <button className="btn btn-link w-100 mt-2" onClick={handleBack}>
             Change mobile number
           </button>

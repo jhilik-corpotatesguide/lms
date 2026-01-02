@@ -1,36 +1,4 @@
-body {
-  min-height: 100vh;
-  margin: 0;
-  background: linear-gradient(135deg, #eef3ff, #f9fbff, #ffffff);
-}
-
-/* Soft light effect */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(120,150,255,0.15), transparent 60%),
-              radial-gradient(circle at bottom right, rgba(100,200,255,0.12), transparent 60%);
-  z-index: -1;
-}
-
-.login-card {
-  width: 360px;
-}
-
-.logo-img {
-  width: 180px;
-}
-
-
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .login-card {
-    width: 100%;
-  }
-
-  .row {
-    text-align: center;
-  }
+/* Global reset only */
+* {
+  box-sizing: border-box;
 }

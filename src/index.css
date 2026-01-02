@@ -1,13 +1,11 @@
-.login-wrapper {
-  height: 100vh;
-  background: linear-gradient(135deg, #eef2ff, #f8fbff);
+html, body, #root {
+  height: 100%;
+  margin: 0;
 }
 
-.login-card {
-  width: 360px;
-  border-radius: 10px;
-}
-
-.logo-img {
-  width: 180px;
+/* Single source of truth for background */
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #0f172a;   /* CLEAR DARK BACKGROUND */
 }

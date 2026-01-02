@@ -1,24 +1,32 @@
+// Import Login page components
 import PhoneCard from "./components/Phonecard";
-import LogoCard from "./components/Logocard"
+import LogoCard from "./components/Logocard";
+
+// Import Login page CSS
+import "./login.css";
 
 function Login() {
   return (
-    <div className="container-fluid vh-100 d-flex align-items-center bg-light">
-      <div className="row w-100 justify-content-center align-items-center">
+    // Main background wrapper
+    <div className="login-page">
 
-        {/* LEFT CARD */}
-        <div className="col-md-4 d-flex justify-content-center">
-          <PhoneCard />
+      {/* Bootstrap container */}
+      <div className="container h-100 d-flex align-items-center">
+
+        {/* Layout row */}
+        <div className="row w-100 align-items-center justify-content-center">
+
+          {/* Left: Phone Card */}
+          <div className="col-md-5 d-flex justify-content-center">
+            <PhoneCard />
+          </div>
+
+          {/* Right: Logo Section */}
+          <div className="col-md-5 text-center logo-side">
+            <LogoCard />
+          </div>
+
         </div>
-
-        {/* SMALL GAP */}
-        <div className="col-md-1"></div>
-
-        {/* RIGHT CARD */}
-        <div className="col-md-4">
-          <LogoCard />
-        </div>
-
       </div>
     </div>
   );
