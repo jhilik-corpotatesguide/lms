@@ -1,0 +1,164 @@
+/* Reset default browser behavior */
+* {
+  box-sizing: border-box;
+}
+
+/* Clean base styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background: #f3f6fb;
+}
+
+/* ================= LEFT PANEL ================= */
+.left-panel {
+  width: 42%;
+  background: #ffffff;
+  padding: 70px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headings */
+.left-panel h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.left-panel p {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+/* Inputs */
+.left-panel input {
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Input focus effect */
+.left-panel input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Remember + Forgot row */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+/* Blue links */
+.link {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* Login button */
+.login-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Login hover effect */
+.login-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* Divider with lines */
+.divider {
+  text-align: center;
+  margin: 26px 0;
+  color: #9ca3af;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+/* Social buttons */
+.social {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Signup text */
+.signup {
+  margin-top: auto;
+  text-align: center;
+  color: #6b7280;
+}
+
+.signup span {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* ================= RIGHT PANEL ================= */
+.right-panel {
+  width: 58%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image fills the entire right side */
+.right-panel {
+  width: 58%;
+  background-image: url("../assets/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+
+  .right-panel {
+    height: 300px;
+  }
+}
