@@ -1,44 +1,38 @@
-/* Reset default browser behavior */
-* {
-  box-sizing: border-box;
-}
+/* ================= DASHBOARD ONLY STYLES ================= */
 
-/* Clean base styling */
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* ================= MAIN CONTAINER ================= */
-.dashboard {
-  display: flex;
+.dashboard-page {
   height: 100vh;
+}
+
+/* Main layout */
+.dashboard-page .dashboard {
+  display: flex;
+  height: 100%;
   background: #f3f6fb;
 }
 
 /* ================= LEFT PANEL ================= */
-.left-panel {
+
+.dashboard-page .left-panel {
   width: 42%;
-  background: #ffffff;
+  background: white;
   padding: 70px 80px;
   display: flex;
   flex-direction: column;
 }
 
-/* Headings */
-.left-panel h2 {
+.dashboard-page .left-panel h2 {
   font-size: 28px;
   margin-bottom: 6px;
   color: #111827;
 }
 
-.left-panel p {
+.dashboard-page .left-panel p {
   color: #6b7280;
   margin-bottom: 30px;
 }
 
-/* Inputs */
-.left-panel input {
+.dashboard-page .left-panel input {
   padding: 14px 16px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
@@ -46,15 +40,13 @@ body {
   font-size: 14px;
 }
 
-/* Input focus effect */
-.left-panel input:focus {
+.dashboard-page .left-panel input:focus {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-/* Remember + Forgot row */
-.options {
+.dashboard-page .options {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,14 +54,12 @@ body {
   margin-bottom: 22px;
 }
 
-/* Blue links */
-.link {
+.dashboard-page .link {
   color: #2563eb;
   cursor: pointer;
 }
 
-/* Login button */
-.login-btn {
+.dashboard-page .login-btn {
   background: #3b82f6;
   color: white;
   border: none;
@@ -81,22 +71,20 @@ body {
   transition: 0.25s;
 }
 
-/* Login hover effect */
-.login-btn:hover {
+.dashboard-page .login-btn:hover {
   background: #2563eb;
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
 }
 
-/* Divider with lines */
-.divider {
+.dashboard-page .divider {
   text-align: center;
   margin: 26px 0;
   color: #9ca3af;
   position: relative;
 }
 
-.divider::before,
-.divider::after {
+.dashboard-page .divider::before,
+.dashboard-page .divider::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -105,11 +93,10 @@ body {
   background: #e5e7eb;
 }
 
-.divider::before { left: 0; }
-.divider::after { right: 0; }
+.dashboard-page .divider::before { left: 0; }
+.dashboard-page .divider::after { right: 0; }
 
-/* Social buttons */
-.social {
+.dashboard-page .social {
   background: white;
   border: 1px solid #e5e7eb;
   padding: 12px;
@@ -119,27 +106,20 @@ body {
   cursor: pointer;
 }
 
-/* Signup text */
-.signup {
+.dashboard-page .signup {
   margin-top: auto;
   text-align: center;
   color: #6b7280;
 }
 
-.signup span {
+.dashboard-page .signup span {
   color: #2563eb;
   cursor: pointer;
 }
 
 /* ================= RIGHT PANEL ================= */
-.right-panel {
-  width: 58%;
-  position: relative;
-  overflow: hidden;
-}
 
-/* Image fills the entire right side */
-.right-panel {
+.dashboard-page .right-panel {
   width: 58%;
   background-image: url("../assets/image.png");
   background-size: cover;
@@ -148,17 +128,18 @@ body {
 }
 
 /* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
-  .dashboard {
+  .dashboard-page .dashboard {
     flex-direction: column;
   }
 
-  .left-panel,
-  .right-panel {
+  .dashboard-page .left-panel,
+  .dashboard-page .right-panel {
     width: 100%;
   }
 
-  .right-panel {
+  .dashboard-page .right-panel {
     height: 300px;
   }
 }

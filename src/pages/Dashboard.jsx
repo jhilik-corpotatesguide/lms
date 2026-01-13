@@ -1,53 +1,50 @@
-// Import the dashboard styles
+// Import dashboard styles
 import "./Dashboard.css";
 
-// Import the image from assets folder
+// Import the hero image (make sure this file exists in src/assets)
 import hero from "../assets/image.png";
 
 function Dashboard() {
   return (
-    // Main dashboard container
-    <div className="dashboard">
+    // Wrapper to isolate dashboard styles
+    <div className="dashboard-page">
 
-      {/* ---------------- LEFT SIDE: LOGIN FORM ---------------- */}
-      <div className="left-panel">
+      {/* Main dashboard layout */}
+      <div className="dashboard">
 
-        {/* Title & subtitle */}
-        <h2>Welcome back!</h2>
-        <p>Log in with your email</p>
+        {/* ---------------- LEFT SIDE: LOGIN FORM ---------------- */}
+        <div className="left-panel">
 
-        {/* Input fields */}
-        <input type="text" placeholder="Email address*" />
-        <input type="password" placeholder="Password*" />
+          <h2>Welcome back!</h2>
+          <p>Log in with your email</p>
 
-        {/* Remember + Forgot password */}
-        <div className="options">
-          <label>
-            <input type="checkbox" /> Remember me
-          </label>
-          <span className="link">Forgot Password?</span>
+          <input type="text" placeholder="Email address*" />
+          <input type="password" placeholder="Password*" />
+
+          <div className="options">
+            <label>
+              <input type="checkbox" /> Remember me
+            </label>
+            <span className="link">Forgot Password?</span>
+          </div>
+
+          <button className="login-btn">Login</button>
+
+          <div className="divider">OR</div>
+
+          <button className="social">Continue with Google</button>
+          <button className="social">Continue with LinkedIn</button>
+
+          <p className="signup">
+            Don't have an account? <span>Sign Up</span>
+          </p>
+
         </div>
 
-        {/* Main login button */}
-        <button className="login-btn">Login</button>
+        {/* ---------------- RIGHT SIDE: IMAGE ONLY ---------------- */}
+        <div className="right-panel"></div>
 
-        {/* Divider */}
-        <div className="divider">OR</div>
-
-        {/* Social login buttons */}
-        <button className="social">Continue with Google</button>
-        <button className="social">Continue with LinkedIn</button>
-
-        {/* Sign up link */}
-        <p className="signup">
-          Don't have an account? <span>Sign Up</span>
-        </p>
       </div>
-
-      {/* ---------------- RIGHT SIDE: IMAGE ONLY ---------------- */}
-      <div className="right-panel"></div>
-
-
     </div>
   );
 }
