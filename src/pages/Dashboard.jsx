@@ -17,9 +17,12 @@ function Dashboard() {
 
           <h2>Welcome back!</h2>
           <p>Log in with your email</p>
-
+          <input type="text" placeholder="Name*" /> 
+          <input type="address" placeholder="Address*" />    
           <input type="text" placeholder="Email address*" />
           <input type="password" placeholder="Password*" />
+
+          
 
           <div className="options">
             <label>
