@@ -1,65 +1,96 @@
-/* ================= DASHBOARD ONLY STYLES ================= */
+/* ===== FULL PAGE BACKGROUND ===== */
 
 .dashboard-page {
   height: 100vh;
-}
+  width: 100%;
 
-/* Main layout */
-.dashboard-page .dashboard {
+  background-image: url("../assets/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   display: flex;
-  height: 100%;
-  background: #f3f6fb;
+  align-items: center;
+  justify-content: flex-end;   /* form ডান পাশে */
+  padding-right: 80px;
+
+  position: relative;
 }
 
-/* ================= LEFT PANEL ================= */
+/* Dark overlay */
+.dashboard-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
 
-.dashboard-page .left-panel {
-  width: 42%;
-  background: white;
-  padding: 70px 80px;
+/* ===== FORM CARD ===== */
+
+.dashboard-card {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+
   display: flex;
   flex-direction: column;
+
+  position: relative;
+  z-index: 2;
 }
 
-.dashboard-page .left-panel h2 {
-  font-size: 28px;
+/* ===== TEXT ===== */
+
+.dashboard-card h2 {
+  font-size: 26px;
   margin-bottom: 6px;
   color: #111827;
 }
 
-.dashboard-page .left-panel p {
+.dashboard-card p {
   color: #6b7280;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
-.dashboard-page .left-panel input {
+/* ===== INPUTS ===== */
+
+.dashboard-card input[type="text"],
+.dashboard-card input[type="password"] {
   padding: 14px 16px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 14px;
 }
 
-.dashboard-page .left-panel input:focus {
+.dashboard-card input:focus {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-.dashboard-page .options {
+/* ===== OPTIONS ===== */
+
+.options {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
-.dashboard-page .link {
+.link {
   color: #2563eb;
   cursor: pointer;
 }
 
-.dashboard-page .login-btn {
+/* ===== BUTTONS ===== */
+
+.login-btn {
   background: #3b82f6;
   color: white;
   border: none;
@@ -71,20 +102,22 @@
   transition: 0.25s;
 }
 
-.dashboard-page .login-btn:hover {
+.login-btn:hover {
   background: #2563eb;
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
 }
 
-.dashboard-page .divider {
+/* ===== DIVIDER ===== */
+
+.divider {
   text-align: center;
-  margin: 26px 0;
+  margin: 22px 0;
   color: #9ca3af;
   position: relative;
 }
 
-.dashboard-page .divider::before,
-.dashboard-page .divider::after {
+.divider::before,
+.divider::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -93,10 +126,12 @@
   background: #e5e7eb;
 }
 
-.dashboard-page .divider::before { left: 0; }
-.dashboard-page .divider::after { right: 0; }
+.divider::before { left: 0; }
+.divider::after { right: 0; }
 
-.dashboard-page .social {
+/* ===== SOCIAL ===== */
+
+.social {
   background: white;
   border: 1px solid #e5e7eb;
   padding: 12px;
@@ -106,40 +141,28 @@
   cursor: pointer;
 }
 
-.dashboard-page .signup {
-  margin-top: auto;
+/* ===== SIGNUP ===== */
+
+.signup {
+  margin-top: 10px;
   text-align: center;
   color: #6b7280;
 }
 
-.dashboard-page .signup span {
+.signup span {
   color: #2563eb;
   cursor: pointer;
 }
 
-/* ================= RIGHT PANEL ================= */
-
-.dashboard-page .right-panel {
-  width: 58%;
-  background-image: url("../assets/image.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ================= RESPONSIVE ================= */
+/* ===== RESPONSIVE ===== */
 
 @media (max-width: 900px) {
-  .dashboard-page .dashboard {
-    flex-direction: column;
+  .dashboard-page {
+    justify-content: center;
+    padding-right: 0;
   }
 
-  .dashboard-page .left-panel,
-  .dashboard-page .right-panel {
-    width: 100%;
-  }
-
-  .dashboard-page .right-panel {
-    height: 300px;
+  .dashboard-card {
+    width: 90%;
   }
 }
