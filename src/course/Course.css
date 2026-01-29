@@ -1,0 +1,149 @@
+/* =========================================
+   MAIN COURSE PAGE CONTAINER (CENTERED)
+   ========================================= */
+.course-page {
+  padding: 40px 20px;
+  background: #ffffff;
+  width: 100%;
+  max-width: 1300px; /* Prevent sticking to right */
+  margin: auto; /* Center page */
+}
+
+/* =========================================
+   PAGE TITLE STYLE
+   ========================================= */
+.course-page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* =========================================
+   COURSE GRID — FORCE 3 PER ROW ON DESKTOP
+   ========================================= */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+  gap: 25px;
+}
+
+/* =========================================
+   COURSE CARD CONTAINER
+   ========================================= */
+.course-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.course-card:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+/* =========================================
+   COURSE IMAGE STYLE — FULL IMAGE (NO CUT)
+   ========================================= */
+.course-image {
+  width: 100%;
+  height: auto; /* Let image show full */
+  object-fit: contain; /* No crop */
+  background: #f7f7f7;
+}
+
+/* =========================================
+   COURSE CONTENT SECTION
+   ========================================= */
+.course-content {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* =========================================
+   COURSE TITLE
+   ========================================= */
+.course-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* =========================================
+   DESCRIPTION TEXT
+   ========================================= */
+.course-desc {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   INFO TEXT
+   ========================================= */
+.course-info {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* =========================================
+   ENROLL BUTTON CENTERED
+   ========================================= */
+.enroll-center {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 14px;
+}
+
+/* =========================================
+   BUTTON STYLE
+   ========================================= */
+.enroll-btn {
+  width: 100%;
+  max-width: 220px;
+  padding: 12px 22px;
+  background: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.enroll-btn:hover {
+  background: #520a9c;
+  transform: scale(1.03);
+}
+
+/* =========================================
+   RESPONSIVE — TABLET (2 PER ROW)
+   ========================================= */
+@media (max-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE (1 PER ROW)
+   ========================================= */
+@media (max-width: 640px) {
+  .course-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .course-page-title {
+    text-align: center;
+  }
+}

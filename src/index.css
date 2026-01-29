@@ -1,11 +1,10 @@
-html, body, #root {
-  height: 100%;
+html, body {
+  height: auto;
+  overflow-y: auto !important;
   margin: 0;
+  padding: 0;
 }
 
-/* Single source of truth for background */
-.login-page {
+#root {
   min-height: 100vh;
-  width: 100%;
-  background: #0f172a;   /* CLEAR DARK BACKGROUND */
 }
