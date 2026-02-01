@@ -4,7 +4,7 @@ import random
 import time
 
 app = Flask(__name__)
-CORS(app)  # allows React frontend 
+CORS(app)  # allows React frontend access
 
 class OTPService:
     def __init__(self):
