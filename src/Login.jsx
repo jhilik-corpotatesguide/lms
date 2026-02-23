@@ -1,6 +1,6 @@
 import PhoneCard from "./components/Phonecard";
 
-import LogoCard from "./components/LogoCard";
+import LogoCard from "./components/Logocard";
 import "./login.css";
 
 function Login() {
