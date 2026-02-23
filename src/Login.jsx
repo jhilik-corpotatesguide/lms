@@ -1,4 +1,4 @@
-import PhoneCard from "./components/phoneCard";
+import PhoneCard from "./components/Phonecard";
 
 import LogoCard from "./components/LogoCard";
 import "./login.css";
