@@ -3,7 +3,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 
 import heroBg from "../../assets/hero-bg.png";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/CG Logo.jpg";
 
 export default function Home() {
 
