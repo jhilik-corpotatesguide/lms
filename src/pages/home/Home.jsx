@@ -32,11 +32,11 @@ export default function Home() {
         {/* Menu */}
         <ul className={`menu ${menuOpen ? "active-menu" : ""}`}>
           <li><Link to="/">Home</Link></li>
-          <li>Faculty</li>
+          
           <li><Link to="/course">Courses</Link></li>
           <li>Resources</li>
-          <li>News</li>
-          <li>About</li>
+          
+          <li>Calander</li>
           <li>Contact</li>
         </ul>
 
