@@ -1,0 +1,3 @@
+account_sid = "AC32f1237e8789fa4b1aff55cf27038c2a"
+auth_token = "ebcc5b4e54b8b2188709266ad3aed323"
+verify_sid = "VA5cdb616a99eaa4078e71d78ce7dd3c68"
