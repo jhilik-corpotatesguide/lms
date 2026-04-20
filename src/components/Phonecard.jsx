@@ -11,7 +11,7 @@ function PhoneCard() {
   const navigate = useNavigate(); // ✅ navigation
 
   // ⚠️ backend PC er IP dao
-  const BASE_URL = "http://192.168.29.160:5000";
+  const BASE_URL = "http://127.0.0.1:5000";
 
   // ================= SEND OTP =================
   const sendOtp = async () => {
