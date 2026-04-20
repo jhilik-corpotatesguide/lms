@@ -1,5 +1,6 @@
 import random
 import time
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from twilio.rest import Client
@@ -15,10 +16,15 @@ from database import (
     new_otp_session,
 )
 
+# ================== ENVIRONMENT CONFIG ==================
+# Set DEV_MODE=False for production with real SMS
+# Set DEV_MODE=True for development with console OTP logging
+DEV_MODE = os.getenv("DEV_MODE", "True").lower() == "true"
+
 # ================== TWILIO CONFIG ==================
-account_sid  = "AC32f1237e8789fa4b1aff55cf27038c2a"
-auth_token   = "ebcc5b4e54b8b2188709266ad3aed323"
-twilio_number = "(256) 305-6561"
+account_sid  = os.getenv("TWILIO_ACCOUNT_SID", "AC32f1237e8789fa4b1aff55cf27038c2a")
+auth_token   = os.getenv("TWILIO_AUTH_TOKEN", "ebcc5b4e54b8b2188709266ad3aed323")
+twilio_number = os.getenv("TWILIO_PHONE", "(256) 305-6561")
 client = Client(account_sid, auth_token)
 
 # ================== FLASK ==================
@@ -26,6 +32,8 @@ app = Flask(__name__)
 CORS(app)
 
 MAX_OTP_ATTEMPTS = 3   # lock out after 3 wrong tries
+
+print(f"🔧 LMS Backend Started | DEV_MODE={DEV_MODE}")
 
 
 # ─────────────────────────────────────────
@@ -46,7 +54,9 @@ def serialize(doc):
 def send_otp_api():
     """
     Body: { "phone": "9876543210" }
-    Saves OTP in MongoDB (TTL 5 min) and sends SMS.
+    
+    DEV_MODE=True:  Logs OTP to console (for testing)
+    DEV_MODE=False: Sends real SMS via Twilio (production)
     """
     data  = request.get_json()
     phone = data.get("phone", "").strip()
@@ -63,18 +73,26 @@ def send_otp_api():
         upsert=True,
     )
 
-    try:
-        message = client.messages.create(
-            body=f"Your LMS OTP is {otp}. Valid for 5 minutes.",
-            from_=twilio_number,
-            to="+91" + phone,
-        )
-        print("SMS sent:", message.sid)
-    except Exception as e:
-        print("SMS failed:", e)
-        # Still return success so dev can test without Twilio credits
-        # Remove this in production ↓
-        print(f"[DEV] OTP for {phone}: {otp}")
+    if DEV_MODE:
+        # ✅ DEVELOPMENT: Log to console
+        print("\n" + "="*70)
+        print(f"📱 OTP GENERATED (DEV MODE)")
+        print(f"   Phone: {phone}")
+        print(f"   OTP: {otp}")
+        print(f"   Valid for: 5 minutes")
+        print("="*70 + "\n")
+    else:
+        # 🚀 PRODUCTION: Send real SMS via Twilio
+        try:
+            message = client.messages.create(
+                body=f"Your LMS OTP is {otp}. Valid for 5 minutes.",
+                from_=twilio_number,
+                to="+91" + phone,
+            )
+            print(f"✅ SMS sent to {phone} (SID: {message.sid})")
+        except Exception as e:
+            print(f"❌ SMS failed to {phone}: {e}")
+            return jsonify({"message": "SMS_SEND_FAILED"}), 500
 
     return jsonify({"message": "OTP_SENT"})
 
