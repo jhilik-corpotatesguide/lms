@@ -8,7 +8,7 @@ function PhoneCard() {
   const [otp, setOtp] = useState("");
   const [msg, setMsg] = useState("");
 
-  const navigate = useNavigate();
+  const navigate = useNavigate();// comment line
 
   const BASE_URL = "http://192.168.29.195:5000";
 
