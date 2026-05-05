@@ -38,6 +38,7 @@ export default function Home() {
           
           <li>Calander</li>
           <li>Contact</li>
+          <li><Link to="/login" className="login-btn">Login</Link></li>
         </ul>
 
       </div>

@@ -35,6 +35,18 @@
   color: inherit;
 }
 
+.login-btn {
+  background: #2563eb;
+  color: #ffffff !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background: #1d4ed8;
+}
 /* Hover */
 .menu li:hover {
   color: #3f51b5;
