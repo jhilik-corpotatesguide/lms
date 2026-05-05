@@ -10,7 +10,7 @@ function PhoneCard() {
 
   const navigate = useNavigate();
 
-  const BASE_URL = "http://127.0.0.1:5000";
+  const BASE_URL = "http://192.168.29.195:5000";
 
   // ================= SEND EMAIL OTP =================
   const sendOtp = async () => {
