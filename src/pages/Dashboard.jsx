@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 function Dashboard() {
@@ -10,7 +11,8 @@ function Dashboard() {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const BASE_URL = "http://127.0.0.1:5000";
+  const navigate = useNavigate();
+  const BASE_URL = "http://192.168.29.195:5000";
 
   const handleRegister = async () => {
     if (!fullName || !address || !email || !phone) {
@@ -39,7 +41,18 @@ function Dashboard() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage(`Registration successful! User ID: ${data.user_id}`);
+        // ✅ User info save করো
+        localStorage.setItem("user_name", fullName);
+        localStorage.setItem("user_email", email);
+        localStorage.setItem("user_id", data.user_id);
+
+        setMessage("Registration successful! Redirecting...");
+
+        // ✅ Course page এ যাও
+        setTimeout(() => {
+          navigate("/course");
+        }, 1000);
+
       } else {
         setMessage(data.message || "Registration failed.");
       }
@@ -59,8 +72,7 @@ function Dashboard() {
       {/* Registration Card */}
       <div className="dashboard-card">
 
-        <h2 className="create-titleh2">Welcome new user !</h2>
-
+        <h2 className="create-titleh2">Welcome new user!</h2>
         <h3 className="create-title">Create Account</h3>
         <p>Please fill in the details to register</p>
 
@@ -68,7 +80,13 @@ function Dashboard() {
 
         <input
           type="text"
-          placeholder="Full Name*"
+          placeholder="First Name*"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Last Name*"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
         />
@@ -78,12 +96,7 @@ function Dashboard() {
           value={address}
           onChange={(e) => setAddress(e.target.value)}
         />
-        <input
-          type="email"
-          placeholder="Email Address*"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        
         <input
           type="tel"
           placeholder="Phone Number*"
@@ -91,16 +104,7 @@ function Dashboard() {
           onChange={(e) => setPhone(e.target.value)}
         />
 
-        <div className="options">
-          <label>
-            <input
-              type="checkbox"
-              checked={agree}
-              onChange={(e) => setAgree(e.target.checked)}
-            />
-            I agree to the Terms & Conditions
-          </label>
-        </div>
+       
 
         <button
           className="login-btn"
@@ -110,10 +114,9 @@ function Dashboard() {
           {isSubmitting ? "Registering..." : "Register"}
         </button>
 
-        <div className="divider">OR</div>
+        
 
-        <button className="social">Register with Google</button>
-        <button className="social">Register with LinkedIn</button>
+        
 
       </div>
     </div>

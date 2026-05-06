@@ -54,9 +54,22 @@ function PhoneCard() {
       const data = await res.json();
 
       if (data.message === "VERIFIED") {
-        setMsg("Login Successful 🎉");
-        setTimeout(() => navigate("/dashboard"), 800);
-      } else if (data.message === "OTP expired") {
+  setMsg("Login Successful 🎉");
+
+  // ✅ email save করো
+  localStorage.setItem("user_email", email);
+
+  // ✅ নতুন user হলে registration, পুরানো হলে course
+  setTimeout(() => {
+    if (data.is_new) {
+      navigate("/dashboard");   // registration page
+    } else {
+      // পুরানো user এর নাম save করো
+      localStorage.setItem("user_name", data.user_name || "User");
+      navigate("/course");      // course page
+    }
+  }, 800);
+}else if (data.message === "OTP expired") {
         setMsg("OTP expired. Please request a new one ❌");
         setStep(1);
         setOtp("");
