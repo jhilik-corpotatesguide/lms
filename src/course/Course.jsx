@@ -256,33 +256,9 @@ export default function Course() {
   return (
     <div className="course-page">
 
-      {/* ✅ USER PROFILE BAR */}
-      <div className="profile-bar">
-        <span className="profile-bar-title">📚 Corporates Guide — Courses</span>
+      
 
-        <div className="profile-wrapper">
-          <div
-            className="profile-avatar"
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            title="My Profile"
-          >
-            {avatar}
-          </div>
-
-          {/* Dropdown */}
-          {dropdownOpen && (
-            <div className="profile-dropdown">
-              <div className="profile-dropdown-name">👤 {userName}</div>
-              <div className="profile-dropdown-email">✉️ {userEmail}</div>
-              <hr className="profile-hr" />
-              <button className="profile-logout" onClick={handleLogout}>
-                🚪 Logout
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-
+          
       {/* Page Title */}
       <h1 className="course-page-title">Academics</h1>
 

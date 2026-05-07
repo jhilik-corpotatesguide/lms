@@ -13,36 +13,7 @@ export default function Home() {
   return (
     <div>
 
-      {/* NAVBAR */}
-      <div className="navbar">
-
-        {/* Logo */}
-        <div className="logo">
-          <img src={logo} alt="logo" />
-        </div>
-
-        {/* Hamburger icon (mobile only) */}
-        <div 
-          className="menu-icon"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </div>
-
-        {/* Menu */}
-        <ul className={`menu ${menuOpen ? "active-menu" : ""}`}>
-          <li><Link to="/">Home</Link></li>
-          
-          <li><Link to="/course">Courses</Link></li>
-          <li>Resources</li>
-          
-          <li>Calander</li>
-          <li>Contact</li>
-          <li><Link to="/login" className="login-btn">Login</Link></li>
-        </ul>
-
-      </div>
-
+      
       {/* HERO BACKGROUND */}
       <section
         className="hero-bg"

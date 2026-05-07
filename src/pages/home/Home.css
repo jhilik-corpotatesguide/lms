@@ -1,39 +1,7 @@
 /* ===== NAVBAR ===== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: white;
-  height: 70px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
-}
 
-/* LOGO */
-.logo img {
-  height: 50px;
-  object-fit: contain;
-}
 
-/* MENU */
-.menu {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
 
-.menu li {
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.menu a {
-  text-decoration: none;
-  color: inherit;
-}
 
 .login-btn {
   background: #2563eb;

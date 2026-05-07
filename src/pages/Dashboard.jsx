@@ -5,26 +5,21 @@ import "./Dashboard.css";
 function Dashboard() {
   const [fullName, setFullName] = useState("");
   const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
+  
   const [phone, setPhone] = useState("");
   const [agree, setAgree] = useState(false);
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navigate = useNavigate();
-  const BASE_URL = "http://192.168.29.195:5000";
+  const BASE_URL = "http://192.168.29.55:5000";
 
   const handleRegister = async () => {
-    if (!fullName || !address || !email || !phone) {
+    if (!fullName || !address || !phone) {
       setMessage("Please complete all required fields.");
       return;
     }
-    if (!agree) {
-      setMessage("You must agree to the Terms & Conditions.");
-      return;
-    }
-    setIsSubmitting(true);
-    setMessage("");
+    
 
     try {
       const response = await fetch(`${BASE_URL}/register`, {
@@ -33,7 +28,7 @@ function Dashboard() {
         body: JSON.stringify({
           full_name: fullName,
           phone: phone.toString(),
-          email,
+          address,
           role: "student",
         }),
       });
@@ -43,7 +38,7 @@ function Dashboard() {
       if (response.ok) {
         // ✅ User info save করো
         localStorage.setItem("user_name", fullName);
-        localStorage.setItem("user_email", email);
+        
         localStorage.setItem("user_id", data.user_id);
 
         setMessage("Registration successful! Redirecting...");
@@ -84,12 +79,7 @@ function Dashboard() {
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="Last Name*"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-        />
+        
         <input
           type="text"
           placeholder="Address*"
