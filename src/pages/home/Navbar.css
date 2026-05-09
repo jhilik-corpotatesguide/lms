@@ -179,4 +179,53 @@
 .nav-logout:hover {
   background: #fee2e2;
 }
+
+/* ── Hamburger Icon (mobile only) ── */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #0b1e45;
+}
+
+/* ── Login Button ── */
+.login-btn {
+  background: #2563eb;
+  color: #ffffff !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;  /* mobile-এ hamburger দেখাবে */
+  }
+
+  .menu {
+    display: none;   /* default-এ লুকানো */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 16px 24px;
+    gap: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    z-index: 998;
+  }
+
+  .active-menu {
+    display: flex;  /* click করলে দেখাবে */
+  }
+
+}
  

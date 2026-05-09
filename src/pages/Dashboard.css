@@ -130,3 +130,14 @@ html, body {
     transform: translate(50%, -50%);
   }
 }
+
+/* Label shown above Date of Birth input */
+.dob-label {
+  display: block;           /* Show on its own line */
+  font-size: 13px;          /* Small text */
+  font-weight: 600;         /* Bold */
+  color: #64748b;           /* Grey color */
+  margin-bottom: 4px;       /* Small gap below label */
+  margin-top: 4px;          /* Small gap above label */
+  text-align: left;         /* Align to left */
+}

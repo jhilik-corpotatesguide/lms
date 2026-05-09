@@ -4,13 +4,14 @@ import Home from "./pages/home/Home";
 import Login from "./Login";
 import Dashboard from "./pages/Dashboard";
 import Course from "./course/Course";
-import Navbar from "./pages/home/Navbar"; // ✅ Navbar import
+import Navbar from "./pages/home/Navbar";
+import Footer from "./pages/home/Footer";
 
 function App() {
   return (
     <div className="app-wrapper">
 
-      {/* ✅ Navbar — login আর dashboard বাদে সব page-এ দেখাবে */}
+      {/* Navbar — login আর dashboard বাদে সব page-এ */}
       <Navbar />
 
       <Routes>
@@ -19,6 +20,9 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/course"    element={<Course />} />
       </Routes>
+
+      {/* Footer — login আর dashboard বাদে সব page-এ */}
+      <Footer />
 
     </div>
   );
