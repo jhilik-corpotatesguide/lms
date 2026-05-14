@@ -18,7 +18,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   // ── Backend URL ───────────────────────────────────────────
-  const BASE_URL = "http://192.168.29.189:5000";
+  const BASE_URL = "http://192.168.31.158:5000";
 
   // ── Calculate max date allowed for DOB (must be 14+ years old) ──
   const today = new Date();
@@ -49,13 +49,13 @@ function Dashboard() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          full_name  : fullName,          // User's full name
-          phone      : phone.toString(),  // Phone as string
-          address    : address,           // User's address
-          dob        : dob,               // Date of birth
-          institution: institution,       // University/School/Company (optional)
-          role       : "student",         // Default role is student
-        }),
+  user_id    : localStorage.getItem("user_id"),
+  full_name  : fullName,
+  phone      : phone.toString(),
+  address    : address,
+  dob        : dob,
+  institution: institution,
+}),
       });
 
       // Parse backend response
