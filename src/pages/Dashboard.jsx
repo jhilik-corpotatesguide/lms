@@ -18,7 +18,7 @@ function Dashboard() {
   const navigate = useNavigate();
 
   // ── Backend URL ───────────────────────────────────────────
-  const BASE_URL = "http://192.168.29.55:5000";
+  const BASE_URL = "http://192.168.29.189:5000";
 
   // ── Calculate max date allowed for DOB (must be 14+ years old) ──
   const today = new Date();
