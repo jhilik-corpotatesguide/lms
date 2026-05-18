@@ -1,0 +1,103 @@
+/* Main card container */
+.login-card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 16px;
+  padding: 34px 36px 36px;
+  width: 380px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* Card title styling */
+.login-card h4 {
+  color: #0b1e45;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+
+/* Input field */
+.login-card input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1px solid #d9e0ec;
+  font-size: 14px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+/* Input focus effect */
+.login-card input:focus {
+  outline: none;
+  border-color: #2b61f3;
+  box-shadow: 0 0 0 3px rgba(43, 97, 243, 0.15);
+}
+
+/* Centered action button */
+.login-card .custom-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 11px 28px;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-card .custom-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Status message */
+.login-card p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* Back row — shown on OTP step */
+.back-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 12px;
+  text-align: left !important;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* Resend OTP link */
+.resend-btn {
+  display: block;
+  margin: 12px auto 0;
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.resend-btn:hover {
+  color: #2563eb;
+}

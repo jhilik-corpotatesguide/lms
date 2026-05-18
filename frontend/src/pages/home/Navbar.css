@@ -1,0 +1,231 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  height: 70px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* LOGO */
+.logo img {
+  height: 50px;
+  object-fit: contain;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Nav Profile Avatar ── */
+.nav-profile-wrapper {
+  position: relative;
+  list-style: none;
+}
+ 
+.nav-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.4);
+  user-select: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.35);
+}
+ 
+.nav-avatar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.5);
+}
+ 
+/* ── Dropdown Card ── */
+.nav-dropdown {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  min-width: 240px;
+  z-index: 999;
+  overflow: hidden;
+  animation: navDropFade 0.18s ease;
+}
+ 
+@keyframes navDropFade {
+  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+ 
+/* ── Dropdown Header ── */
+.nav-dropdown-header {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  padding: 20px;
+  text-align: center;
+}
+ 
+.nav-dropdown-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 3px solid rgba(255,255,255,0.5);
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+ 
+.nav-dropdown-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+ 
+.nav-dropdown-email {
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  word-break: break-all;
+}
+ 
+/* ── Dropdown Body ── */
+.nav-dropdown-body {
+  padding: 14px 16px;
+}
+ 
+.nav-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  margin-bottom: 8px;
+}
+ 
+.nav-info-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+ 
+.nav-info-text {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.nav-info-label {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+ 
+.nav-info-value {
+  font-size: 13px;
+  color: #1e293b;
+  font-weight: 500;
+  word-break: break-all;
+}
+ 
+/* ── Logout Button ── */
+.nav-logout {
+  width: 100%;
+  padding: 10px;
+  background: #fff0f0;
+  border: 1.5px solid #fecaca;
+  border-radius: 10px;
+  color: #dc2626;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+ 
+.nav-logout:hover {
+  background: #fee2e2;
+}
+
+/* ── Hamburger Icon (mobile only) ── */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #0b1e45;
+}
+
+/* ── Login Button ── */
+.login-btn {
+  background: #2563eb;
+  color: #ffffff !important;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;  /* mobile-এ hamburger দেখাবে */
+  }
+
+  .menu {
+    display: none;   /* default-এ লুকানো */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 16px 24px;
+    gap: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    z-index: 998;
+  }
+
+  .active-menu {
+    display: flex;  /* click করলে দেখাবে */
+  }
+
+}
+ 

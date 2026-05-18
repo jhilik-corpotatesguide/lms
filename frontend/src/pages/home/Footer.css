@@ -1,0 +1,228 @@
+/* ── Footer Wrapper ── */
+.footer {
+  position: relative;
+  background: #0b1e45;
+  color: #ffffff;
+  padding: 60px 40px 0;
+  margin-top: 40px;
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 30, 69, 0.88);
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* ── Logo ── */
+.footer-logo {
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* ── Contact ── */
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer-icon {
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #60a5fa;
+}
+
+/* ── Social ── */
+.footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.footer-social a {
+  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+  color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* ── Headings ── */
+.footer-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* ── Links ── */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #60a5fa;
+}
+
+/* ── ISO Badge ── */
+.footer-col--center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.iso-badge {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4a017, #f5c842);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.4);
+}
+
+.iso-inner {
+  text-align: center;
+  color: #5a3800;
+}
+
+.iso-cert {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.iso-num {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.iso-std {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.iso-comp {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* ── MSME ── */
+.footer-msme {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.msme-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.msme-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Bottom Bar ── */
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-bottom-links a:hover {
+  color: #ffffff;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col--center {
+    justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
