@@ -1,9 +1,0 @@
-/* Global reset only */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  overflow-y: auto;
-}
-
