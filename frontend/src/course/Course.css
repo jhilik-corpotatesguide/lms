@@ -1,254 +1,253 @@
-/* =========================================
-   MAIN COURSE PAGE CONTAINER (CENTERED)
-   ========================================= */
+/* ── Page ── */
 .course-page {
-  padding: 40px 20px;
-  background: #ffffff;
-  width: 100%;
-  max-width: 1300px; /* Prevent sticking to right */
-  margin: auto; /* Center page */
+  min-height: 100vh;
+  background: #f4f6fb;
+  padding-bottom: 60px;
 }
 
-/* =========================================
-   PAGE TITLE STYLE
-   ========================================= */
-.course-page-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-/* =========================================
-   COURSE GRID — FORCE 3 PER ROW ON DESKTOP
-   ========================================= */
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
-  gap: 25px;
-}
-
-/* =========================================
-   COURSE CARD CONTAINER
-   ========================================= */
-.course-card {
-  background: #ffffff;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #eaeaea;
+/* ── Navbar ── */
+.course-navbar {
   display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
-}
-
-/* Hover effect */
-.course-card:hover {
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-  transform: translateY(-5px);
-}
-
-/* =========================================
-   COURSE IMAGE STYLE — FULL IMAGE (NO CUT)
-   ========================================= */
-.course-image {
-  width: 100%;
-  height: auto; /* Let image show full */
-  object-fit: contain; /* No crop */
-  background: #f7f7f7;
-}
-
-/* =========================================
-   COURSE CONTENT SECTION
-   ========================================= */
-.course-content {
-  padding: 18px 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-/* =========================================
-   COURSE TITLE
-   ========================================= */
-.course-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* =========================================
-   DESCRIPTION TEXT
-   ========================================= */
-.course-desc {
-  font-size: 14px;
-  color: #444;
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-/* =========================================
-   INFO TEXT
-   ========================================= */
-.course-info {
-  font-size: 14px;
-  margin-bottom: 6px;
-  color: #333;
-}
-
-/* =========================================
-   ENROLL BUTTON CENTERED
-   ========================================= */
-.enroll-center {
-  margin-top: auto;
-  display: flex;
-  justify-content: center;
-  padding-top: 14px;
-}
-
-/* =========================================
-   BUTTON STYLE
-   ========================================= */
-.enroll-btn {
-  width: 100%;
-  max-width: 220px;
-  padding: 12px 22px;
-  background: #6a0dad;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.2s ease, transform 0.1s ease;
-}
-
-.enroll-btn:hover {
-  background: #520a9c;
-  transform: scale(1.03);
-}
-
-/* =========================================
-   RESPONSIVE — TABLET (2 PER ROW)
-   ========================================= */
-@media (max-width: 1024px) {
-  .course-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* =========================================
-   RESPONSIVE — MOBILE (1 PER ROW)
-   ========================================= */
-@media (max-width: 640px) {
-  .course-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .course-page-title {
-    text-align: center;
-  }
-}
-
-
-
-
-
-/* ── Profile Bar (top) ── */
-.profile-bar {
-  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 28px;
-  background: #0b1e45;
-  color: #ffffff;
+  padding: 14px 32px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.profile-bar-title {
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-/* Avatar circle */
-.profile-wrapper {
+.nav-profile-wrapper {
   position: relative;
 }
 
-.profile-avatar {
-  width: 40px;
-  height: 40px;
+.nav-avatar {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #2563eb;
-  color: #ffffff;
+  background: linear-gradient(135deg, #6a0dad, #2563eb);
+  color: white;
   font-size: 18px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 2px solid #ffffff;
   user-select: none;
-  transition: background 0.2s;
+  transition: transform 0.2s;
 }
 
-.profile-avatar:hover {
-  background: #1d4ed8;
+.nav-avatar:hover {
+  transform: scale(1.08);
 }
 
-/* Dropdown */
-.profile-dropdown {
+.nav-dropdown {
   position: absolute;
-  top: 50px;
+  top: 52px;
   right: 0;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  min-width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+  min-width: 210px;
   padding: 16px;
   z-index: 200;
-  animation: fadeIn 0.15s ease;
+  animation: popIn 0.15s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-6px); }
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.profile-dropdown-name {
+.nav-dropdown-name {
+  font-weight: 700;
   font-size: 15px;
-  font-weight: 600;
-  color: #0b1e45;
-  margin-bottom: 4px;
+  color: #111;
+  margin: 0 0 3px;
 }
 
-.profile-dropdown-email {
-  font-size: 13px;
-  color: #64748b;
+.nav-dropdown-email {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 10px;
   word-break: break-all;
 }
 
-.profile-hr {
+.nav-hr {
   border: none;
-  border-top: 1px solid #e2e8f0;
-  margin: 12px 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 8px 0 12px;
 }
 
-.profile-logout {
+.nav-logout-btn {
   width: 100%;
   padding: 9px;
   background: #fee2e2;
+  color: #dc2626;
   border: none;
   border-radius: 8px;
-  color: #dc2626;
-  font-size: 14px;
   font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
   transition: background 0.2s;
 }
 
-.profile-logout:hover {
+.nav-logout-btn:hover {
   background: #fecaca;
+}
+
+/* ── Title ── */
+.course-page-title {
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+  margin: 48px 0 8px;
+  color: #0f172a;
+}
+
+.course-page-sub {
+  text-align: center;
+  color: #6b7280;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+/* ── Grid ── */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Card ── */
+.course-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.13);
+}
+
+/* ── Image ── */
+.course-img-wrap {
+  background: #f0f4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  height: 200px;
+}
+
+.course-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* ── Content ── */
+.course-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.course-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.course-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Tags ── */
+.course-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  font-size: 13px;
+  color: #374151;
+  background: #f1f5f9;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+/* ── Enroll Button ── */
+.enroll-btn {
+  margin-top: auto;
+  padding: 12px;
+  background: linear-gradient(135deg, #6a0dad, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.enroll-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.enroll-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Popup ── */
+.enroll-popup {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; top: 0; }
+  to   { opacity: 1; top: 24px; }
+}
+
+.enroll-popup.success { background: #22c55e; color: white; }
+.enroll-popup.error   { background: #ef4444; color: white; }
+.enroll-popup.info    { background: #2563eb; color: white; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .course-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .course-grid { grid-template-columns: 1fr; }
+  .course-page-title { font-size: 26px; }
 }
