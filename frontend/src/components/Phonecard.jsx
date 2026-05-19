@@ -11,7 +11,7 @@ function PhoneCard() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-  const BASE_URL = "http://10.237.65.203:5000";
+  const BASE_URL = "http://10.175.63.203:5000";
 
   const showMsg = (text, type = "error") => {
     setMsg(text);

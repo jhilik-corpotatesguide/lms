@@ -195,6 +195,52 @@ def send_otp_api():
 
     otp = str(random.randint(100000, 999999))
 
+# ─────────────────────────────────────────
+#  ENROLL ROUTE
+# ─────────────────────────────────────────
+
+@app.route("/enroll", methods=["POST"])
+def enroll():
+    data        = request.get_json()
+    course_id   = data.get("course_id")
+    course_name = data.get("course_name", "").strip()
+    user_id     = data.get("user_id", "").strip()
+
+    if not user_id or not course_id:
+        return jsonify({"message": "MISSING_FIELDS"}), 400
+
+    try:
+        user = users_collection.find_one({"_id": ObjectId(user_id)})
+    except Exception:
+        return jsonify({"message": "INVALID_USER"}), 400
+
+    if not user:
+        return jsonify({"message": "USER_NOT_FOUND"}), 404
+
+    # ── আগে enrolled কিনা check করো ──
+    enrolled = user.get("enrolled_courses", [])
+    already  = any(str(c["course_id"]) == str(course_id) for c in enrolled)
+    if already:
+        return jsonify({"message": "ALREADY_ENROLLED"}), 409
+
+    # ── course info সহ store করো ──
+    course_entry = {
+        "course_id"  : course_id,
+        "course_name": course_name,
+        "enrolled_at": datetime.utcnow().isoformat(),
+    }
+
+    users_collection.update_one(
+        {"_id": ObjectId(user_id)},
+        {
+            "$push": {"enrolled_courses": course_entry},
+            "$set" : {"updated_at": datetime.utcnow()}
+        }
+    )
+
+    return jsonify({"message": "ENROLLED"}), 200
+
+
     otp_collection.replace_one(
         {"phone": phone},
         new_otp_session(phone, otp),

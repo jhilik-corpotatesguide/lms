@@ -55,7 +55,7 @@ const courses = [
   },
 ];
 
-const BASE_URL = "http://192.168.29.189:5000";
+const BASE_URL = "http://10.175.63.203:5000";
 
 export default function Course() {
   const userName  = localStorage.getItem("user_name")  || "";
@@ -85,7 +85,7 @@ export default function Course() {
       const res = await fetch(`${BASE_URL}/enroll`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ user_id: userId, course_id: course.id }),
+        body: JSON.stringify({ user_id: userId, course_id: course.id, course_name: course.title }),
       });
       const data = await res.json();
       if (data.message === "ENROLLED") {
