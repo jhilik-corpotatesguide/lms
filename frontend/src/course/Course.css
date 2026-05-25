@@ -251,3 +251,16 @@
   .course-grid { grid-template-columns: 1fr; }
   .course-page-title { font-size: 26px; }
 }
+
+.enroll-btn.enrolled {
+  background: #dcfce7;
+  color: #16a34a;
+  cursor: not-allowed;
+}
+
+.enroll-btn.locked {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

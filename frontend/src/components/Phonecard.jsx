@@ -11,7 +11,7 @@ function PhoneCard() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-  const BASE_URL = "http://10.175.63.203:5000";
+  const BASE_URL = "http://192.168.29.189:5000";
 
   const showMsg = (text, type = "error") => {
     setMsg(text);
@@ -78,6 +78,9 @@ function PhoneCard() {
         localStorage.setItem("user_email", email.trim().toLowerCase());
         if (data.user_id) localStorage.setItem("user_id", data.user_id);
         if (data.user_name) localStorage.setItem("user_name", data.user_name);
+        if (data.user_id) localStorage.setItem("user_id", data.user_id);
+if (data.user_name) localStorage.setItem("user_name", data.user_name);
+localStorage.setItem("login_time", Date.now().toString()); // ✅ এটা add করো
 
         setTimeout(() => {
           if (data.is_new) {
