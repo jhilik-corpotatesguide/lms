@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Corporates Guide LMS
 
 A full-stack Learning Management System.
@@ -182,3 +183,6 @@ matching filenames (or full image URLs), and re-run `python seed_data.py`.
 - Frontend: deploy to Vercel / Netlify (`npm run build` → `dist/` folder)
 - Update `VITE_API_URL` in frontend `.env` to your deployed backend URL,
   and `FRONTEND_URL` in backend `.env` to your deployed frontend URL (for CORS).
+=======
+# lms
+>>>>>>> 135bc5d6a99fa542c006564fcd5d041fe0b40a33
