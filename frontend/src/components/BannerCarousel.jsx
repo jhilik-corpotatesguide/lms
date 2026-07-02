@@ -16,7 +16,7 @@ const FALLBACK_BANNERS = [
   {
     title: "100% Placement Support",
     subtitle: "We help you land your first tech job",
-    image: "/images/banner-placement.png",
+    image: "/images/banner-placement.jpg",
   },
 ];
 
@@ -97,22 +97,38 @@ export default function BannerCarousel() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/10"></div>
 
-     {/* Content */}
-<div className="absolute inset-0 z-10 flex items-center justify-end px-4 sm:px-8 md:px-16">
-
-  <div className="w-[65%] sm:w-[60%] md:max-w-xl text-right">
-
-    <h1 className="text-base sm:text-2xl md:text-5xl font-bold leading-tight text-[#440D70] break-words">
+    {/* Content */}
+<div
+  className={`absolute inset-0 z-10 flex px-4 sm:px-8 md:px-16 ${
+    index === 2
+      ? "items-center justify-center"
+      : "items-center justify-end"
+  }`}
+>
+  <div
+    className={`${
+      index === 2
+        ? "w-full text-center"
+        : "w-[65%] sm:w-[60%] md:max-w-xl text-right"
+    }`}
+  >
+    <h1
+      className={`text-base sm:text-2xl md:text-5xl font-bold leading-tight break-words ${
+        index === 2 ? "text-white" : "text-[#440D70]"
+      }`}
+    >
       {typedText}
       <span className="animate-pulse">|</span>
     </h1>
 
-    <p className="mt-2 text-xs sm:text-base md:text-xl leading-relaxed text-[#440D70]">
+    <p
+      className={`mt-2 text-xs sm:text-base md:text-xl leading-relaxed ${
+        index === 2 ? "text-white" : "text-[#440D70]"
+      }`}
+    >
       {banner.subtitle}
     </p>
-
   </div>
-
 </div>
 
       {/* Slider Dots */}

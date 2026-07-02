@@ -91,24 +91,6 @@ export default function Footer() {
               </Link>
             </li>
 
-            <li>
-              <Link to="/resources" className="hover:text-white">
-                Resources
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/news" className="hover:text-white">
-                News Updates
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/contact" className="hover:text-white">
-                Contact Us
-              </Link>
-            </li>
-
           </ul>
         </div>
 
@@ -125,19 +107,13 @@ export default function Footer() {
             industry exposure.
           </p>
 
-          <div className="flex gap-5 mt-6">
-            <img
-              src="/images/msme-badge.png"
-              alt="MSME"
-              className="h-16 object-contain"
-            />
-
-            <img
-              src="/images/iso-badge.png"
-              alt="ISO"
-              className="h-16 object-contain"
-            />
-          </div>
+          <div className="mt-6">
+  <img
+    src="/images/msme-iso.png"
+    alt="MSME & ISO Certification"
+    className="w-full max-w-xs object-contain"
+  />
+</div>
         </div>
 
       </div>
