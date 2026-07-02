@@ -28,8 +28,8 @@ export default function Courses() {
   const isEnrolled = (slug) => user?.enrolled_courses?.includes(slug)
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">Our Courses</h1>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-2">Our Courses</h1>
       <p className="text-center text-gray-500 mb-10">Choose a course and start your learning journey today</p>
 
       {loading ? (
