@@ -5,4 +5,10 @@
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background-color: #f4f6fd;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dark body {
+  background-color: #440D70;
+  color: #e5e7eb;
 }

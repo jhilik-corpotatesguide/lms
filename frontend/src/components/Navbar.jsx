@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-
+import { useTheme } from '../context/ThemeContext'
 export default function Navbar() {
   const { isLoggedIn, user, logout } = useAuth()
+  const { theme, toggleTheme } = useTheme()
   const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -32,7 +33,7 @@ export default function Navbar() {
     }`
 
   return (
-    <nav className="w-full bg-white shadow-sm sticky top-0 z-40">
+    <nav className="w-full bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-40 transition-colors">
       <div className="px-4 sm:px-6 py-3 flex items-center justify-between">
         {/* Logo */}
 {/* Logo */}
@@ -53,7 +54,23 @@ export default function Navbar() {
           <NavLink to="/courses" className={desktopLinkClass}>Courses</NavLink>
           <NavLink to="/about" className={desktopLinkClass}>About</NavLink>
           <NavLink to="/calendar" className={desktopLinkClass}>Calendar</NavLink>
-
+<button
+  onClick={toggleTheme}
+  className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200"
+  aria-label="Toggle dark mode"
+>
+  {theme === 'dark' ? (
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36 6.36l-.7-.7M6.34 6.34l-.7-.7m12.02 0l-.7.7M6.34 17.66l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+  ) : (
+    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+  )}
+</button>
           {isLoggedIn ? (
             <div className="flex items-center gap-3 ml-2">
               <NavLink to="/profile" className={desktopLinkClass}>
