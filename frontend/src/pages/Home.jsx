@@ -3,7 +3,7 @@ import BannerCarousel from '../components/BannerCarousel'
 
 export default function Home() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
       <BannerCarousel />
 
       <div className="text-center mb-10">

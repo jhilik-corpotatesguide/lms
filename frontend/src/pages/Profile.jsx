@@ -50,9 +50,9 @@ export default function Profile() {
   if (!user) return null
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
-      <div className="bg-white rounded-2xl shadow-sm border p-8">
-        <div className="flex items-center gap-6 mb-8">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div className="bg-white rounded-2xl shadow-sm border p-5 sm:p-8">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-8 text-center sm:text-left">
           <div className="relative">
             <img
               src={user.profile_picture || `https://api.dicebear.com/7.x/initials/svg?seed=${user.name || user.email}`}

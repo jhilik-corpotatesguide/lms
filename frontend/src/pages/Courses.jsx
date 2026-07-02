@@ -28,16 +28,18 @@ export default function Courses() {
   const isEnrolled = (slug) => user?.enrolled_courses?.includes(slug)
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">Our Courses</h1>
-      <p className="text-center text-gray-500 mb-10">Choose a course and start your learning journey today</p>
+
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border dark:border-gray-700 overflow-hidden flex flex-col">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-2">Our Courses</h1>
+      <p className="text-center text-gray-500 dark:text-gray-400 mb-10">Choose a course and start your learning journey today</p>
 
       {loading ? (
-        <p className="text-center text-gray-500">Loading courses...</p>
+        <p className="text-center text-gray-500 dark:text-gray-400">Loading courses...</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {courses.map((course) => (
-            <div key={course.slug} className="bg-white rounded-xl shadow-sm border overflow-hidden flex flex-col">
+            <div key={course.slug} className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border dark:border-gray-700 overflow-hidden flex flex-col">
               <div className="h-40 bg-brand-light flex items-center justify-center">
                 {course.image ? (
                   <img src={course.image} alt={course.title} className="h-full w-full object-cover" />
@@ -68,6 +70,7 @@ export default function Courses() {
           ))}
         </div>
       )}
+    </div>
     </div>
   )
 }

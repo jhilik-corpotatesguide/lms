@@ -24,7 +24,7 @@ export default function Login() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8">
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8">
         <h1 className="text-2xl font-bold text-gray-800 text-center mb-1">Welcome Back</h1>
         <p className="text-gray-500 text-center mb-6 text-sm">
           Enter your email to receive a login OTP

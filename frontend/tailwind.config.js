@@ -1,13 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
         brand: {
-          purple: '#5b21b6',
-          indigo: '#4f46e5',
-          light: '#eef1fb',
+          purple: '#440D70',
+          indigo: '#440D70',
+          light: '#A3C1E4',
         },
       },
     },

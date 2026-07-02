@@ -27,8 +27,6 @@ export default function VerifyOtp() {
       const { access_token, is_new_user, user } = res.data
 
       if (is_new_user) {
-        // Store token temporarily so /auth/register call is authorized-adjacent,
-        // then move to registration form.
         navigate('/register', { state: { email, access_token } })
       } else {
         login(access_token, user)
@@ -53,7 +51,7 @@ export default function VerifyOtp() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8">
+      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8">
         <h1 className="text-2xl font-bold text-gray-800 text-center mb-1">Verify OTP</h1>
         <p className="text-gray-500 text-center mb-6 text-sm">
           Enter the 6-digit code sent to <span className="font-medium">{email}</span>

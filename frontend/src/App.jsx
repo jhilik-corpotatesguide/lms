@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import SessionWarningModal from './components/SessionWarningModal'
 import RequireAuth from './components/RequireAuth'
 import { useSessionTimeout } from './hooks/useSessionTimeout'
@@ -45,6 +46,7 @@ export default function App() {
           }
         />
       </Routes>
+      <Footer />
     </>
   )
 }
