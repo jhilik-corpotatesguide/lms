@@ -5,10 +5,27 @@
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background-color: #f4f6fd;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
 .dark body {
-  background-color: #440D70;
-  color: #e5e7eb;
+  background-color: #290240;
+}
+
+/* Dark mode: force all text to a light color automatically */
+.dark, .dark * {
+  color: #f3f4f6 !important;
+}
+
+/* Smooth transition for EVERY element's color, background, and border
+   whenever dark/light mode switches, or any hover/state change happens */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow, opacity, transform;
+  transition-timing-function: ease;
+  transition-duration: 0.25s;
+}
+
+/* Elements that should keep their own color even in dark mode */
+.dark .dark-keep-color {
+  color: inherit !important;
 }
